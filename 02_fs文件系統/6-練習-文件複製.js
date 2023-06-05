@@ -3,6 +3,7 @@
 
 const fs = require("fs");
 const process = require("process");
+
 // 方式一 readFile
 // 讀取文件內容
 // let data = fs.readFileSync("./笑看風雲.mp4");
