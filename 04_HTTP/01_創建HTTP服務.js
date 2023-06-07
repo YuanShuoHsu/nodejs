@@ -9,6 +9,6 @@ const server = http.createServer((request, response) => {
 });
 
 // 3. 監聽端口，啟動服務
-server.listen(80, () => {
+server.listen(9000, () => {
   console.log("服務已經啟動...");
 });
