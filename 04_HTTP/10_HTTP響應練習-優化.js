@@ -6,7 +6,7 @@ const fs = require("fs");
 const server = http.createServer((request, response) => {
   // 讀取文件內容
   let html = fs.readFileSync(__dirname + "/10_table.html");
-  response.end(html);
+  response.end(html); // 設置響應體
 });
 
 // 監聽端口，啟動服務
