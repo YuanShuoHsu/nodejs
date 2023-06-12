@@ -14,6 +14,8 @@ const server = http.createServer((request, response) => {
   } else if (method === "GET" && pathname === "/reg") {
     // register 註冊
     response.end("註冊頁面");
+  } else {
+    response.end("Not Found");
   }
 });
 
