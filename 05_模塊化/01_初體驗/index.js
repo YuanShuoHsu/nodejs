@@ -1,7 +1,5 @@
 // 導入模塊
-const me = require("./me.js");
+const tiemo = require("./me.js");
 
-// 輸出 me
-console.log(me);
-// me.tiemo();
-// me.niejiao();
+// 調用函數
+tiemo();
