@@ -83,12 +83,25 @@ router.post("/account", async (req, res) => {
 });
 
 // 刪除紀錄
-router.get("/account/:id", (req, res) => {
+router.get("/account/:id", async (req, res) => {
   // 獲取 params 的 id 參數
   let id = req.params.id;
-  db.get("accounts").remove({ id: id }).write();
-  // 提醒
-  res.render("success", { msg: "刪除成功", url: "/account" });
+  //刪除
+  // AccountModel.deleteOne({ _id: id }, (err, data) => {
+  //   if (err) {
+  //     res.status(500).send("刪除失敗");
+  //     return;
+  //   }
+  //   // 提醒
+  //   res.render("success", { msg: "刪除成功", url: "/account" });
+  // });
+  try {
+    await AccountModel.deleteOne({ _id: id });
+    // 提醒
+    res.render("success", { msg: "刪除成功", url: "/account" });
+  } catch (err) {
+    res.status(500).send("刪除失敗");
+  }
 });
 
 module.exports = router;
